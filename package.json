@@ -1,0 +1,31 @@
+{
+  "name": "bomb-rush-cyberfunk-api",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^11.4.0",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "mongoose": "^7.4.2",
+    "next": "13.4.13",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.9",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "typescript": "^5.1.6"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.38"
+  }
+}
