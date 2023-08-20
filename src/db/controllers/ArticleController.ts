@@ -21,6 +21,7 @@ export const saveArticles = async (articles: any, shouldUpdate: boolean) => {
       existingArticle.videoUrl = article.videoUrl;
       existingArticle.imageCaption = article.imageCaption;
       existingArticle.content = article.content;
+      await existingArticle.save();
     } else {
       console.log(`Found existing article post ${article.postId}`);
     }

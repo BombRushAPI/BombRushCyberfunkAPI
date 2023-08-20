@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="https://swgu-library.onrender.com/images/ICONS/cyberfunk-logo%202.png" />
+          <link rel="icon" href="favicon.png" />
         </Head>
         <body>
           <Main />
