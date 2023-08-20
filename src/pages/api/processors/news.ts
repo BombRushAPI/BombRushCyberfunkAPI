@@ -1,21 +1,24 @@
 import axios from "axios";
 import { load } from "cheerio";
 import fs from 'fs';
+import { saveArticles } from "@/db/controllers/ArticleController";
 
+/**
+ * Scrapes the Team Reptile website for Bomb Rush Cyberfunk News Articles
+ * NOTE: is liable to break if website structure changes
+ * 
+ */
 export default async function handler(req: any, res: any) {
   res.send('Started BRC-NEWS Processor')
   const { data } = await axios.get('https://team-reptile.com/category/bomb-rush-cyberfunk/');
   const $ = load(data);
-  const txtFileName = "news.txt";
-  const jsonFileName = "news.json";
+  const jsonFileName = `brcapi-news-${new Date().toISOString()}.json` // TODO: upload file to drive to store as BackUps
   const jsonFileContents = [];
-  
-  // Loop through article
+  const shouldUpdate = req && req.query && req.query.update === 'true';
 
-  const articles = $('.post')
-  console.log(`Processing ${articles.length} news articles...`);
-
-
+  // Scrape Article Data
+  const articles = $('.post');
+  console.log(`Processing ${articles.length} news articles... Updating: ${shouldUpdate}`);
   for (const child of articles) {
     const postId = $(child).attr('id')?.replace('post-', '').trim();
     const heading = $(child).find('header > h1 > a').text().trim()
@@ -33,7 +36,8 @@ export default async function handler(req: any, res: any) {
     const pgs: string[] = [];
     normalizedParagraphs.forEach(p => p !== "" && pgs.push(p.trim()));
 
-    const data = {
+    // Save data into Prepared Object
+    jsonFileContents.push({
       postId: postId,
       heading: heading,
       articleUrl: articleUrl,
@@ -44,27 +48,18 @@ export default async function handler(req: any, res: any) {
       imageCaption: imgCaption,
       videoUrl: youtubeVideoUrl,
       content: pgs
-    }
-    jsonFileContents.push(data);
-    
-    // Prepare TXT file
-    await fs.promises.writeFile(txtFileName, '');
-    await fs.promises.appendFile(txtFileName, `Post Id: ${postId}\n`);
-    await fs.promises.appendFile(txtFileName, `Heading: ${heading}\n`);
-    await fs.promises.appendFile(txtFileName, `URL: ${articleUrl}\n`);
-    await fs.promises.appendFile(txtFileName, `Publish Date: ${datePublished}\n`);
-    await fs.promises.appendFile(txtFileName, `Publish Time: ${timePublished}\n`);
-    await fs.promises.appendFile(txtFileName, `Author: ${author}\n`);
-    await fs.promises.appendFile(txtFileName, `Image Url: ${imgUrl}\n`);
-    await fs.promises.appendFile(txtFileName, `Image Caption: ${imgCaption}\n`);
-    await fs.promises.appendFile(txtFileName, `Youtube Video Url: ${youtubeVideoUrl}\n`);
-    await fs.promises.appendFile(txtFileName, `Content: ${pgs}\n\n`);
-
+    });
   }
 
-    const jsonData = JSON.stringify(jsonFileContents, null, 2); // Optional: pretty print with 2 spaces
+    // Save to Mongo
+    await saveArticles(jsonFileContents, shouldUpdate);
+    console.log(`Finished processing articles.`);
 
-    // Write the JSON array to the file asynchronously
-    await fs.promises.writeFile(jsonFileName, jsonData + '\n');
+    // Save to file and upload as a BackUp.
+    await fs.promises.writeFile(jsonFileName, JSON.stringify(jsonFileContents, null, 2) + '\n');
+    //TODO: Call to media-library goes here
+    //console.log(`Finished Uploading Backup.`);
+    //TODO: Delete the file locally
+    //Handle any file deletion errors
 
 }

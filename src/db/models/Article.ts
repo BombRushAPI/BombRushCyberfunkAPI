@@ -3,7 +3,7 @@ import { modelOptions, prop } from "@typegoose/typegoose";
 @modelOptions({schemaOptions: {collection: "Article", versionKey: false, timestamps: true}})
 export class Article {
 
-  @prop()
+  @prop({ unique: true })
   postId: string;
 
   @prop()
