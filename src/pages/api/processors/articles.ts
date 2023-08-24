@@ -4,21 +4,21 @@ import fs from 'fs';
 import { saveArticles } from "@/db/controllers/ArticleController";
 
 /**
- * Scrapes the Team Reptile website for Bomb Rush Cyberfunk News Articles
+ * Scrapes the Team Reptile website for Bomb Rush Cyberfunk Articles
  * NOTE: is liable to break if website structure changes
  * 
  */
 export default async function handler(req: any, res: any) {
-  res.send('Started BRC-NEWS Processor')
+  res.send('Started BRC-ARTICLES Processor')
   const { data } = await axios.get('https://team-reptile.com/category/bomb-rush-cyberfunk/');
   const $ = load(data);
-  const jsonFileName = `brcapi-news-${new Date().toISOString()}.json` // TODO: upload file to drive to store as BackUps
+  const jsonFileName = `brcapi-articles-${new Date().toISOString()}.json` // TODO: upload file to drive to store as BackUps
   const jsonFileContents = [];
   const shouldUpdate = req && req.query && req.query.update === 'true';
 
   // Scrape Article Data
   const articles = $('.post');
-  console.log(`Processing ${articles.length} news articles... Updating: ${shouldUpdate}`);
+  console.log(`Processing ${articles.length} articles... Updating: ${shouldUpdate}`);
   for (const child of articles) {
     const postId = $(child).attr('id')?.replace('post-', '').trim();
     const heading = $(child).find('header > h1 > a').text().trim()

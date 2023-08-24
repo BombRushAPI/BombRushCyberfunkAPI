@@ -21,11 +21,13 @@ if (!MONGODB_URI) {
  */
 let cached = global.mongoose;
 if (!cached) {
+  console.log('Connecting to Mongo and setting connection as cached.');
   cached = global.mongoose = { conn: null, promise: null };
 }
 
 async function dbConnect() {
   if (cached.conn) {
+    console.log('Returning cached mongo connection');
     return cached.conn;
   }
 

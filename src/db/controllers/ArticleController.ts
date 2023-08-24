@@ -1,6 +1,23 @@
 import { ArticleModel } from "../models";
 import dbConnect from "../db";
 
+export const getArticles = async (limit: number) => {
+  await dbConnect();
+  return await ArticleModel.find().limit(limit);
+}
+
+export const getArticleById = async (id: any) => {
+  await dbConnect();
+  return await ArticleModel.findById(id);
+}
+
+export const getRandomArticle = async () => {
+  await dbConnect();
+  const count = await ArticleModel.countDocuments();
+  const randomIndex = Math.floor(Math.random() * count);
+  return await ArticleModel.findOne().skip(randomIndex);
+}
+
 export const saveArticles = async (articles: any, shouldUpdate: boolean) => {
   await dbConnect();
 
