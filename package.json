@@ -1,7 +1,6 @@
 {
   "name": "bomb-rush-cyberfunk-api",
-  "version": "0.1.1",
-  "private": true,
+  "version": "0.1.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,6 +17,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.8",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",

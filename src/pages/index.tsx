@@ -1,7 +1,10 @@
-import Image from 'next/image'
+import { useEffect } from 'react'
 import styles from './styles/page.module.css'
 
 export default function Home() {
+  useEffect(() => {
+    console.log('rendered home page');
+  }, [])
 
   return (
     <main className={styles.main}>
