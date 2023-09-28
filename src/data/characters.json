@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Red",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "N/A",
+    "media": {
+      "general": [
+        {
+          "description": "Red Chillin' at Versum Hill",
+          "imgUrl": ""
+        }
+      ],
+      "outfits": [
+        {
+          "name": "Spring",
+          "url": ""
+        },
+        {
+          "name": "Summer",
+          "url": ""
+        },
+        {
+          "name": "Fall",
+          "url": ""
+        },
+        {
+          "name": "Winter",
+          "url": ""
+        }
+      ]
+    },
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Tryce",
+    "defaultRide": "BMX",
+    "unlockLocation": "N/A",
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Bel",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "N/A",
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Rave",
+    "defaultRide": "BMX",
+    "unlockLocation": "Versum Hill",
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Faux",
+    "defaultRide": "N/A",
+    "unlockLocation": "N/A",
+    "playableLimit": true,
+    "groups": ["Bomb Rush Crew", "Big 3"] 
+  },
+  {
+    "name": "Vinyl",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "The Hideout",
+    "groups": ["Bomb Rush Crew", "Futurism"] 
+  },
+  {
+    "name": "DJ Cyber",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "Millenium Square",
+    "groups": ["Bomb Rush Crew", "Futurism", "Big 3"] 
+  },
+  {
+    "name": "Felix",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "The Hideout",
+    "groups": ["Bomb Rush Crew", "Big 3"] 
+  },
+  {
+    "name": "Red Felix",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "N/A",
+    "playableLimit": true,
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Solace",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "The Hideout",
+    "groups": ["Bomb Rush Crew"] 
+  },
+  {
+    "name": "Frank",
+    "defaultRide": "BMX",
+    "unlockLocation": "Versum Hill",
+    "groups": ["Bomb Rush Crew", "The Franks"] 
+  },
+  {
+    "name": "Flesh Prince",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "Mataan",
+    "groups": ["Bomb Rush Crew", "The Franks"]
+  },
+  {
+    "name": "Rise",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "Pyramid Island",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Coil",
+    "defaultRide": "BMX",
+    "unlockLocation": "Mataan",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Shine",
+    "defaultRide": "BMX",
+    "unlockLocation": "Millenium Mall",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Mesh",
+    "defaultRide": "BMX",
+    "unlockLocation": "Brink Terminal",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Devil Theory",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "Pyramid Island",
+    "groups": ["Bomb Rush Crew", "Devil Theory"]
+  },
+  {
+    "name": "Rietveld",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "Versum Hill",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Eclipse",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "Brink Terminal",
+    "groups": ["Bomb Rush Crew", "Eclipse Crew"]
+  },
+  {
+    "name": "Dot-Exe",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "Millenium Mall",
+    "groups": ["Bomb Rush Crew", "Dot-Exe Crew"]
+  },
+  {
+    "name": "Futurism",
+    "defaultRide": "Inline Skates",
+    "unlockLocation": "Mataan",
+    "groups": ["Bomb Rush Crew", "Futurism"]
+  },
+  {
+    "name": "Oldhead",
+    "defaultRide": "Skateboard",
+    "unlockLocation": "N/A",
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Base",
+    "defaultRide": "",
+    "unlockLocation": "N/A",
+    "dlc": true,
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Jay",
+    "defaultRide": "",
+    "unlockLocation": "N/A",
+    "dlc": true,
+    "groups": ["Bomb Rush Crew"]
+  },
+  {
+    "name": "Escher",
+    "playable": false
+  },
+  {
+    "name": "Policeman",
+    "playable": false
+  },
+  {
+    "name": "Policeman(hand gun)",
+    "playable": false
+  },
+  {
+    "name": "Policeman(sniper)",
+    "playable": false
+  }
+]
